@@ -1,5 +1,3 @@
--module(msg_cache_02).
-
 -export([start/1]).
 -export([loop/1]).
 -export([get_name/1]).
@@ -13,6 +11,7 @@
 	 length = 0,
 	 buffer = []
 	 }).
+
 -define(API_TIMEOUT, 3000).
 
 call(Pid, Request) ->
