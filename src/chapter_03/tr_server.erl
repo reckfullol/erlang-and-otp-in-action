@@ -7,6 +7,8 @@
 
 -module(tr_server).
 
+-include_lib("eunit/include/eunit.hrl").
+
 -behaviour(gen_server).
 
 %% API
