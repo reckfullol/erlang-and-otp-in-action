@@ -31,7 +31,10 @@ start_link() ->
 %% Before OTP 18 tuples must be used to specify a child. e.g.
 %% Child :: {Id,StartFunc,Restart,Shutdown,Type,Modules}
 init([]) ->
-    {ok, {{one_for_all, 0, 1}, []}}.
+    Server = {resource_discovery, {resource_discovery, start_link, []}, permanent, 2000, worker, [resource_discovery]},
+    Children = [Server],
+    RestartStrategy = {one_for_one, 0, 1},
+    {ok, {RestartStrategy, Children}}.
 
 %%====================================================================
 %% Internal functions
