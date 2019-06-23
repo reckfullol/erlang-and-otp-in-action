@@ -1,0 +1,6 @@
+-sname tcp_interface
+
+-setcookie tcp_interface_cookie
+
++K true
++A30
